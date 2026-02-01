@@ -1,0 +1,72 @@
+RAJU KANCHAN
++1 (561) 949-0603 | rajukanch64@gmail.com | NY, USA (Open to Relocation) | linkedin.com/in/rajukanch
+
+PROFESSIONAL SUMMARY
+Results-driven Data Analyst with over 5+ years of experience transforming complex datasets into actionable
+insights to drive business decisions and operational efficiency. Proficient in SQL, Python, Tableau, Power
+BI, and advanced Excel for data extraction, analysis, visualization, and reporting. Proven track record of
+partnering with cross-functional teams to perform trend analysis, root-cause investigations, and forecasting,
+delivering measurable improvements in product performance, audience engagement, and revenue metrics. Strong
+communicator skilled at translating business requirements into scalable data solutions.
+
+PROFESSIONAL EXPERIENCE
+
+American Express                                                          New York, NY, USA
+Data Analyst                                                              August 2024 - Present
+• Collected, consolidated, and validated data from multiple internal enterprise sources, ensuring 99%+
+  accuracy for key business metrics across global operations and supporting leadership dashboards for product
+  health and financial performance.
+• Built and maintained structured reporting views and interactive Tableau/Power BI dashboards to provide
+  real-time visibility into operational trends, resulting in 20-30% faster decision-making for product and
+  operations teams.
+• Partnered with product, operations, and finance stakeholders to translate complex business questions into
+  analytical outputs, performing trend and root-cause analysis that informed forecasting models and reduced
+  performance variances by up to 15%.
+• Developed standardized data models and documentation, eliminating redundant reporting processes and
+  enabling scalable analytics assets that supported enterprise-wide initiatives.
+• Conducted ad-hoc analyses using SQL and Python to identify opportunities for process optimization,
+  contributing to improved product performance metrics and operational efficiency.
+
+Smart IMS Inc.                                                            Hyderabad, TG, India
+Data Analyst                                                              September 2020 - November 2022
+• Aggregated and organized data from diverse internal systems (articles, campaigns, user engagement),
+  creating reliable datasets for consistent audience and content performance reporting.
+• Designed and delivered Tableau dashboards and structured analytical views that tracked readership trends,
+  content reach, and distribution effectiveness, enabling editorial teams to optimize content strategies and
+  increase audience engagement by 18-25%.
+• Collaborated with business and editorial stakeholders to define KPIs and reporting requirements, translating
+  business needs into measurable metrics and supporting data-driven planning decisions.
+• Performed in-depth trend and root-cause analysis using SQL queries and Python scripting, identifying
+  key drivers of performance changes and recommending optimizations that improved content distribution
+  efficiency.
+• Maintained standardized data definitions, documentation, and quality controls, enhancing data transparency
+  and reducing reporting errors by 40%.
+
+Capgemini                                                                 Hyderabad, TG, India
+Programmer Analyst                                                        April 2019 - July 2020
+• Developed and maintained data-driven applications and reports by gathering business requirements and
+  integrating data from multiple sources to support operational and management reporting.
+• Built ETL processes and data pipelines using SQL and scripting tools to ensure consistent data flow and
+  system functionality, reducing manual data handling time by 35%.
+• Collaborated with technical and business teams to troubleshoot data issues, validate flows, and document
+  system logic, improving reporting accuracy and maintainability.
+• Translated business needs into technical solutions, delivering enhanced analytical reports that supported
+  decision-making and operational improvements.
+
+SKILLS
+Technical Skills and Tools: SQL, Python (Pandas, NumPy), R, Tableau, Power BI, Excel (Advanced,
+PivotTables, VBA), ETL Processes, Data Modeling, Data Cleaning, Data Validation, Statistical Analysis, Trend
+Analysis, Root-Cause Analysis, Forecasting, A/B Testing, Google Analytics, Microsoft SQL Server, SAS
+(familiar), Jira/Confluence, Cross-Functional Collaboration, Stakeholder Communication, Business Intelligence
+
+EDUCATION
+
+Florida Atlantic University
+Master's, Computer and Information Science                                GPA: 3.93
+
+Lovely Professional University
+Bachelor's, Computer Engineering                                          GPA: 3.89
+
+CERTIFICATIONS
+• Google Data Analytics Professional Certificate
+• Microsoft Certified: Power BI Data Analyst Associate

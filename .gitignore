@@ -5,3 +5,7 @@
 .env
 credentials.json
 token.json
+
+# Python
+__pycache__/
+*.pyc
