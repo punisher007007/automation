@@ -1,0 +1,7 @@
+# Intermediates — regenerated at runtime, never commit
+.tmp/
+
+# Secrets — populated locally, never commit
+.env
+credentials.json
+token.json
