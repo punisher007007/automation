@@ -58,7 +58,19 @@ def get_credentials():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(CREDS_PATH, SCOPES)
-            creds = flow.run_local_server(port=0)
+            try:
+                creds = flow.run_local_server(port=0)
+            except Exception:
+                # Headless environment — no browser available.
+                # Print the auth URL and tell the user to use auth_google.py.
+                auth_url, _ = flow.authorization_url(
+                    access_type="offline", prompt="consent"
+                )
+                print("\n[!] No browser detected. Authorize manually:\n")
+                print(f"    {auth_url}\n")
+                print("    After authorizing, copy the code and run:")
+                print("    python execution/auth_google.py <CODE>\n")
+                raise SystemExit(1)
 
         with open(TOKEN_PATH, "w") as f:
             f.write(creds.to_json())
