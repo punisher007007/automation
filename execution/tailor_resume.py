@@ -1,7 +1,7 @@
 """
 tailor_resume.py — Layer 3: Execution
 
-Calls the Grok API to tailor the base resume for a specific job description.
+Calls OpenRouter to tailor the base resume for a specific job description.
 Loads the prompt template and base resume from data/, assembles the full
 message, and returns the tailored resume text.
 
@@ -15,8 +15,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GROK_API_KEY = os.environ["GROK_API_KEY"]
-GROK_MODEL = "grok-3"
+OPENROUTER_API_KEY = os.environ["OPENROUTER_API_KEY"]
+MODEL = "openai/gpt-4o"
 
 # Paths relative to project root (where the pipeline is run from)
 PROMPT_PATH = "data/grok_prompt.txt"
@@ -30,14 +30,14 @@ def _load(path: str) -> str:
 
 def tailor(job_description: str) -> str:
     """
-    Sends the full prompt (template + JD + base resume) to Grok.
+    Sends the full prompt (template + JD + base resume) to OpenRouter.
     Returns the tailored resume as plain text.
     """
     prompt_template = _load(PROMPT_PATH)
     base_resume = _load(RESUME_PATH)
 
     # The prompt template already contains the user's raw experience.
-    # We also append the formatted resume so Grok has both for max context.
+    # We also append the formatted resume for max context.
     full_prompt = (
         f"{prompt_template}\n\n"
         f"---\n\n"
@@ -49,13 +49,13 @@ def tailor(job_description: str) -> str:
     )
 
     resp = requests.post(
-        "https://api.x.ai/v1/chat/completions",
+        "https://openrouter.ai/api/v1/chat/completions",
         headers={
-            "Authorization": f"Bearer {GROK_API_KEY}",
+            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
             "Content-Type": "application/json",
         },
         json={
-            "model": GROK_MODEL,
+            "model": MODEL,
             "messages": [{"role": "user", "content": full_prompt}],
             "max_tokens": 4000,
         },
