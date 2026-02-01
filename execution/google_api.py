@@ -16,6 +16,8 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
+import httplib2
+import google_auth_httplib2
 
 from docx import Document
 from docx.shared import Pt, Inches
@@ -36,6 +38,13 @@ DRIVE_FOLDER_ID = os.environ["DRIVE_FOLDER_ID"]
 SHEET_TITLE = "Job Applications"
 TOKEN_PATH = "token.json"
 CREDS_PATH = "credentials.json"
+
+
+def _build_service(name, version, credentials):
+    """Builds a Google API client, working around self-signed certs in sandboxed envs."""
+    http = httplib2.Http(disable_ssl_certificate_validation=True)
+    authorized_http = google_auth_httplib2.AuthorizedHttp(credentials, http=http)
+    return build(name, version, http=authorized_http)
 
 
 # ── Auth ──────────────────────────────────────────────────────────────────
@@ -208,7 +217,7 @@ def create_resume_docx(resume_text: str, filepath: str) -> str:
 def upload_to_drive(file_path: str, file_name: str) -> str:
     """Uploads a file to the configured Drive folder. Returns the web link."""
     creds = get_credentials()
-    drive = build("drive", "v3", credentials=creds)
+    drive = _build_service("drive", "v3", creds)
 
     mime_map = {
         ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -241,8 +250,8 @@ def get_or_create_sheet() -> tuple:
     in the configured Drive folder.
     """
     creds = get_credentials()
-    drive = build("drive", "v3", credentials=creds)
-    sheets = build("sheets", "v4", credentials=creds)
+    drive = _build_service("drive", "v3", creds)
+    sheets = _build_service("sheets", "v4", creds)
 
     # Check if master sheet already exists in the folder
     results = drive.files().list(
@@ -323,7 +332,7 @@ def get_or_create_sheet() -> tuple:
 def append_to_sheet(sheet_id: str, row: list):
     """Appends one row to the master sheet."""
     creds = get_credentials()
-    sheets = build("sheets", "v4", credentials=creds)
+    sheets = _build_service("sheets", "v4", creds)
 
     sheets.spreadsheets().values().append(
         spreadsheetId=sheet_id,
